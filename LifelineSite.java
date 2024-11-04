@@ -3,19 +3,20 @@ public class LifelineSite extends Site {
     double _rate;
     double base;
 
-    public LifelineSite( int units, int rate, double base ) {
+    public LifelineSite( int units, int rate ) {
         super();
         _units = units;
         _rate = rate;
-        this.base = base;
+
     }
 
 
     public double getBaseAmount(){
+        base = _units * _rate * 0.5;
         return base;
     }
 
     public double getTaxAmount(){
-        return _rate;
+        return base * Site.Tax_Rate * 0.2;
     }
 }

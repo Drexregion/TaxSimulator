@@ -12,11 +12,12 @@ public class ResidentialSite extends Site {
 
     @Override
     public double getTaxAmount() {
-        return _rate*base;
+        return Site.Tax_Rate*base;
     }
 
     @Override
     public double getBaseAmount() {
-        return _units*base;
+        base = _units * _rate;
+        return base;
     }
 }
