@@ -3,16 +3,20 @@ public class ResidentialSite extends Site {
     double _rate;
     double base;
 
-    public ResidentialSite( int units, int rate, double base ) {
-        super(rate);
+    public ResidentialSite( int units, int rate) {
+        super();
         _units = units;
         _rate = rate;
-        this.base = base;
     }
 
-    public double getBillableAmount() {
-        double doubleBase = _units * _rate;
-        double tax = base * Site.Tax_Rate;
-        return base+tax;
+
+    @Override
+    public double getTaxAmount() {
+        return _rate*base;
+    }
+
+    @Override
+    public double getBaseAmount() {
+        return _units*base;
     }
 }

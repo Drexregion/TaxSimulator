@@ -1,7 +1,7 @@
-public abstract class Site implements SiteFrame {
-    protected static double Tax_Rate;
-    public Site(double tax) {
-        Tax_Rate =tax;
+public abstract class Site {
+    protected final static  double Tax_Rate = 0.3;
+    public Site() {
+
     }
 
     public double getBillableAmount() {
