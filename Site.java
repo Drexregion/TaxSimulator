@@ -1,14 +1,15 @@
-public class Site {
+public abstract class Site implements SiteFrame {
     protected static double Tax_Rate;
     public Site(double tax) {
         Tax_Rate =tax;
     }
 
     public double getBillableAmount() {
-        double doubleBase = _units * _rate * 0.5;
-        double tax = base * Site.Tax_Rate * 0.2;
-        return base+tax;
+        return getBaseAmount() + getTaxAmount();
     }
 
+    public abstract double getTaxAmount();
+
+    public abstract double getBaseAmount();
 
 }
