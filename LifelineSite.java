@@ -15,4 +15,12 @@ public class LifelineSite extends Site {
         double tax = base * Site.Tax_Rate * 0.2;
         return base+tax;
     }
+
+    public double getBaseAmount(){
+        return base;
+    }
+
+    public double getTaxAmount(){
+        return _rate;
+    }
 }
